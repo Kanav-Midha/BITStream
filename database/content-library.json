@@ -1,0 +1,88 @@
+{
+  "media": [
+    {
+      "id": "campus-documentary-1",
+      "slug": "monsoon-on-campus",
+      "title": "Monsoon on Campus",
+      "description": "A short documentary-style walk through the Goa campus during the first spell of monsoon rain.",
+      "category": "Campus Stories",
+      "tags": ["campus", "documentary", "monsoon"],
+      "durationLabel": "03:48",
+      "videoUrl": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
+      "thumbnailUrl": "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=1200&h=700&fit=crop",
+      "submittedAt": "2026-03-26T10:30:00.000Z",
+      "updatedAt": "2026-03-27T09:15:00.000Z",
+      "uploader": {
+        "email": "aarav@goa.bits-pilani.ac.in",
+        "name": "Aarav Nair",
+        "role": "student",
+        "image": null
+      },
+      "approval": {
+        "status": "approved",
+        "notes": "Strong campus relevance and clean thumbnail.",
+        "reviewedAt": "2026-03-27T09:15:00.000Z",
+        "reviewedByEmail": "admin@goa.bits-pilani.ac.in"
+      },
+      "stats": {
+        "views": 1834,
+        "likes": 246
+      }
+    },
+    {
+      "id": "tutorial-1",
+      "slug": "react-crash-revision-for-compre",
+      "title": "React Crash Revision for Compre Week",
+      "description": "A focused front-end revision session recorded by seniors for quick compre prep.",
+      "category": "Tutorials",
+      "tags": ["react", "frontend", "revision"],
+      "durationLabel": "14:12",
+      "videoUrl": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
+      "thumbnailUrl": "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=1200&h=700&fit=crop",
+      "submittedAt": "2026-03-24T08:00:00.000Z",
+      "updatedAt": "2026-03-24T12:10:00.000Z",
+      "uploader": {
+        "email": "isha@goa.bits-pilani.ac.in",
+        "name": "Isha Rao",
+        "role": "student",
+        "image": null
+      },
+      "approval": {
+        "status": "approved",
+        "notes": "Useful academic content.",
+        "reviewedAt": "2026-03-24T12:10:00.000Z",
+        "reviewedByEmail": "admin@goa.bits-pilani.ac.in"
+      },
+      "stats": {
+        "views": 2940,
+        "likes": 412
+      }
+    },
+    {
+      "id": "music-room-jam-1",
+      "slug": "music-room-jam-session",
+      "title": "Music Room Jam Session",
+      "description": "Acoustic jam from the music room with a short intro from the organizers.",
+      "category": "Music",
+      "tags": ["music", "jam", "club"],
+      "durationLabel": "06:27",
+      "videoUrl": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
+      "thumbnailUrl": "https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=1200&h=700&fit=crop",
+      "submittedAt": "2026-03-22T17:20:00.000Z",
+      "updatedAt": "2026-03-23T11:00:00.000Z",
+      "uploader": {
+        "email": "riya@goa.bits-pilani.ac.in",
+        "name": "Riya Sharma",
+        "role": "student",
+        "image": null
+      },
+      "approval": {
+        "status": "pending"
+      },
+      "stats": {
+        "views": 0,
+        "likes": 0
+      }
+    }
+  ]
+}
