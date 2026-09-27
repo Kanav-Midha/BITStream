@@ -54,7 +54,11 @@ function matchesFilters(media: MediaItem, filters: MediaFilters) {
 
 async function getLibraryItems() {
   if (cloudinaryMetadataEnabled()) {
-    return listCloudinaryMedia();
+    const library = await readLibrary().catch(() => ({ media: [] as MediaItem[] }));
+    // On the hosted site, uploads live in Cloudinary; keep the seeded library alongside them.
+    const uploaded = await listCloudinaryMedia().catch(() => [] as MediaItem[]);
+    const uploadedSlugs = new Set(uploaded.map((media) => media.slug));
+    return [...uploaded, ...library.media.filter((media) => !uploadedSlugs.has(media.slug))];
   }
 
   const library = await readLibrary();

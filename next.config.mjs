@@ -10,6 +10,9 @@ const nextConfig = {
       bodySizeLimit: "48mb",
     },
   },
+  outputFileTracingIncludes: {
+    "/**": ["./database/content-library.json"],
+  },
   turbopack: {
     root: __dirname,
   },
