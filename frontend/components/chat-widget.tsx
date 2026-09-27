@@ -1,15 +1,25 @@
 "use client";
 
 import { useChat } from "@ai-sdk/react";
-import { useState } from "react";
+import { useState, type FormEvent } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card } from "@/components/ui/card";
 import { MessageCircle, X, Send } from "lucide-react";
 
 export function ChatWidget() {
-  const { messages, input, handleInputChange, handleSubmit, isLoading } = useChat();
+  const { messages, sendMessage, status, error } = useChat();
+  const [input, setInput] = useState("");
   const [isOpen, setIsOpen] = useState(false);
+  const isLoading = status === "submitted" || status === "streaming";
+
+  function handleSubmit(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    const text = input.trim();
+    if (!text || isLoading) return;
+    sendMessage({ text });
+    setInput("");
+  }
 
   return (
     <div className="fixed bottom-6 right-6 z-50">
@@ -24,14 +34,17 @@ export function ChatWidget() {
           <div className="flex-1 overflow-y-auto p-3 space-y-2 text-sm">
             {messages.map((m) => (
               <div key={m.id} className={m.role === "user" ? "text-right" : "text-left"}>
-                <span className={`inline-block p-2 rounded-lg ${m.role === "user" ? "bg-primary text-primary-foreground" : "bg-muted"}`}>
-                  {m.content}
+                <span className={`inline-block p-2 rounded-lg whitespace-pre-wrap ${m.role === "user" ? "bg-primary text-primary-foreground" : "bg-muted"}`}>
+                  {m.parts.map((part, index) => (part.type === "text" ? <span key={index}>{part.text}</span> : null))}
                 </span>
               </div>
             ))}
+            {error ? (
+              <p className="text-xs text-destructive">Sorry, the assistant is unavailable right now.</p>
+            ) : null}
           </div>
           <form onSubmit={handleSubmit} className="p-2 border-t flex gap-2">
-            <Input value={input} onChange={handleInputChange} placeholder="Ask..." className="h-8 text-xs" />
+            <Input value={input} onChange={(event) => setInput(event.target.value)} placeholder="Ask..." className="h-8 text-xs" />
             <Button type="submit" size="sm" disabled={isLoading}>
               <Send className="h-3 w-3" />
             </Button>
